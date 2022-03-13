@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        subjects  = new Array("Math", "Phisics", "IT", "PE", "English", "Russian");
+        function init(){
+            strict = new Array();
+            strict = subjects.slice(0, 3);
+            notStrict = new Array();
+            notStrict = subjects.slice(3, 6);
+            document.write("<h2>Точные</h2>", strict+"<br> ");
+            document.write("<h2>Не точные</h2>", notStrict+"<br> ");
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="init()">Запускай</button>
+</body>
+</html>

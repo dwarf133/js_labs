@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function confirmDownload(link){
+            if(confirm('Продолжить скачивание ?')){
+                link.download = "temp.pdf";
+                link.click();
+            }
+            else link.href = "ex12.html";
+        }
+    </script>
+    <a onclick="confirmDownload(self)" href="temp.pdf">Скачать онлайн без регистрации и смс</a>
+
+</body>
+</html>

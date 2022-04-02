@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.addEventListener("load",function(){
+            document.getElementById("chk").addEventListener("click",function(){
+                var pass1 = document.getElementById("passinpt1"), pass2 = document.getElementById("passinpt2"), mess=document.getElementById("mesinpt");
+                if(pass1.value!=pass2.value){
+                    pass1.value="";
+                    pass2.value="";
+                    document.getElementById("err").innerHTML = "<h2>Passwords do not match!</h2>";
+                    document.getElementById("passinpt1").focus();
+                }
+                if(mess.value.length<4){
+                    mess.value=""; 
+                    document.getElementById("err").innerHTML = "<h2>Message too short!</h2>";
+                    document.getElementById("passinpt2").focus();
+                }
+            });
+        })
+    </script>
+
+</head>
+<body>
+    <form name="form" onsubmit;="return validate()">
+        Nickname*<br><input type="text" name="imy" size=15 required><br>
+        Password*<br><input type="password" id="passinpt1" size=10 required><br>
+        Confirmation password*<br><input type="password" id="passinpt2" size=10 required><br>
+        Email*<br><input type="email" required><br>
+        Message theme:*<br><input type="text" size=15 required><br>
+        Message:<br><textarea id="mesinpt" cols=16 rows=5>Enter message</textarea><br><br>
+        <input type="button" value="Check" id="chk"><input type="reset" value="Clear">
+        *- required fields
+        <div id="err"></div>
+    </form>
+</body>
+</html>
